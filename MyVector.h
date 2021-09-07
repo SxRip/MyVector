@@ -280,7 +280,7 @@ private:
 	class vector_iterator
 	{
 	public:
-		vector_iterator(_Ty* TmpIt)// : it(TmpIt)
+		vector_iterator(_Ty* TmpIt)
 		{
 			it = TmpIt;
 		}
