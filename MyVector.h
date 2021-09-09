@@ -3,7 +3,7 @@
 
 using namespace std;
 
-template<class _Ty>
+template<typename _Ty>
 class vector
 {
 public:
@@ -226,11 +226,12 @@ public:
 			return m_pArr[_Pos];
 	}
 
-	vector_iterator begin() { return m_pArr; }
-	vector_iterator end() { return m_pArr + m_iSIZE; }
+	vector_iterator begin() const { return m_pArr; }
+	vector_iterator end() const { return m_pArr + m_iSIZE; }
 
-	_Ty& operator[](const int _Pos) { return m_pArr[_Pos]; }
-	bool operator==(vector<_Ty>& vec)
+	_Ty& operator[](const int _Pos) const { return m_pArr[_Pos]; }
+
+	bool operator==(const vector<_Ty>& vec) const
 	{
 		if (this->m_iSIZE != vec.size())
 		{
@@ -246,7 +247,7 @@ public:
 		return true;
 	}
 
-	bool operator!=(vector<_Ty>& vec) { return !(*this == vec); }
+	bool operator!=(const vector<_Ty>& vec) const { return !(*this == vec); }
 private:
 	class vector_iterator
 	{
@@ -264,10 +265,10 @@ private:
 		_Ty& operator++() { return *m_pIt++; }
 		_Ty& operator--() { return *m_pIt--; }
 
-		bool operator==(const vector_iterator& tmpIt) { return tmpIt.m_pIt == m_pIt; }
-		bool operator!=(const vector_iterator& tmpIt) { return tmpIt.m_pIt != m_pIt; }
+		bool operator==(const vector_iterator& tmpIt) const { return tmpIt.m_pIt == m_pIt; }
+		bool operator!=(const vector_iterator& tmpIt) const { return tmpIt.m_pIt != m_pIt; }
 
-		_Ty& operator*() { return *m_pIt; }
+		_Ty& operator*() const { return *m_pIt; }
 	private:
 		_Ty* m_pIt;
 	};
