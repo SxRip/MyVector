@@ -1,6 +1,8 @@
 #pragma once
 #include <iostream>
 
+#pragma warning (disable : 4018, 6386)
+
 using namespace std;
 
 template<typename _Ty>
@@ -116,10 +118,6 @@ public:
 				{
 					tArr[i] = _FillVal;
 				}
-
-				delete[] m_pArr;
-
-				m_pArr = tArr;
 			}
 			else
 			{
@@ -127,11 +125,11 @@ public:
 				{
 					tArr[i] = _FillVal;
 				}
-
-				delete[] m_pArr;
-
-				m_pArr = tArr;
 			}
+
+			delete[] m_pArr;
+
+			m_pArr = tArr;
 
 			m_iSIZE = _Val;
 		}
