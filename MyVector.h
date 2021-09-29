@@ -161,7 +161,7 @@ public:
 
 			for (size_t i = 0; i < m_iSIZE; i++)
 			{
-				if ((tArr + i) == (tArr + _Indx))
+				if (i == _Indx)
 				{
 					tmp = m_pArr[i];
 					tArr[i] = _Val;
@@ -182,7 +182,7 @@ public:
 	}
 	void erase(int&& _Indx)
 	{
-		if (m_iSIZE)
+		if (m_iSIZE  && _Indx <= m_iSIZE - 1)
 		{
 			_Ty* tArr = new _Ty[--m_iSIZE];
 
@@ -190,7 +190,7 @@ public:
 
 			for (size_t i = 0; i < m_iSIZE + 1; i++, it++)
 			{
-				if ((tArr + i) != (tArr + _Indx))
+				if (i != _Indx)
 				{
 					tArr[it] = m_pArr[i];
 				}
