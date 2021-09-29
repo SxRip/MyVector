@@ -255,6 +255,7 @@ private:
 		{
 			m_pIt = TmpIt;
 		}
+		vector_iterator() { m_pIt = nullptr; }
 		_Ty& operator+(int _Val) { return *(m_pIt + _Val); }
 		_Ty& operator-(int _Val) { return *(m_pIt - _Val); }
 
