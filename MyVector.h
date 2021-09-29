@@ -228,7 +228,7 @@ public:
 	vector_iterator begin() const { return m_pArr; }
 	vector_iterator end() const { return m_pArr + m_iSIZE; }
 
-	_Ty& operator[](const int _Pos) const { return m_pArr[_Pos]; }
+	_Ty& operator[](const int& _Pos) const { return m_pArr[_Pos]; }
 
 	bool operator==(const vector<_Ty>& vec) const
 	{
