@@ -217,7 +217,7 @@ public:
 
 	_Ty& back() const { return m_pArr[m_iSIZE - 1]; }
 
-	_Ty& at(const int _Pos) const
+	_Ty& at(const int& _Pos) const
 	{
 		if (_Pos > m_iSIZE - 1)
 			_THROW(exception("out of range"));
