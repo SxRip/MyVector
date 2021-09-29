@@ -97,6 +97,7 @@ public:
 		else
 		{
 			m_pArr = new _Ty[_Val];
+			m_iSIZE = _Val;
 		}
 	}
 	void resize(const int _Val, const _Ty&& _FillVal, bool _Save)
